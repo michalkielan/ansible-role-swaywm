@@ -20,8 +20,8 @@ set $menu {{ swaywm_menu }}
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# Default wallpaper (more resolutions are available in {{ swaywm_datadir }}/backgrounds/sway/)
+output * bg {{ swaywm_datadir }}/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -225,4 +225,4 @@ bar {
     }
 }
 
-include @sysconfdir@/sway/config.d/*
+include {{ swaywm_sysconfdir}}/sway/config.d/*
