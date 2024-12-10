@@ -21,7 +21,9 @@ set $menu {{ swaywm_menu }}
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in {{ swaywm_datadir }}/backgrounds/sway/)
-output * bg {{ swaywm_datadir }}/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+{% for output in swaywm_outputs_desktop_background %}
+output {{ output.name }} bg {{ output.file }} {{ output.mode }}
+{% endfor %}
 #
 # Example configuration:
 #
