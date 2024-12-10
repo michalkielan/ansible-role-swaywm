@@ -78,3 +78,6 @@ swaywm_bar:
     inactive_workspace: "#32323200 #32323200 #5c5c5c"
     # urgent_workspace: <border> <background> <text>
     # binding_mode: <border> <background> <text>
+
+# Register extra keybindings
+swaywm_keybindings_extra: []

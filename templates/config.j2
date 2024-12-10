@@ -252,4 +252,10 @@ bar {
 {% endif %}
 }
 
+# Register extra keybindings
+{% for keybinding in swaywm_keybindings_extra %}
+# {{ keybinding.name }}
+bindsym {{ '--locked' if keybinding.locked else '' }} {{ keybinding.key }} exec {{ keybinding.exec }}
+{% endfor %}
+
 include {{ swaywm_sysconfdir}}/sway/config.d/*
