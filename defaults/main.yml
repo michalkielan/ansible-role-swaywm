@@ -66,8 +66,8 @@ swaywm_inputs_touchpad: []
 #     natural_scroll: "enabled"
 #     middle_emulation: "enabled"
 
-# Register default keybindings
-swaywm_keybindings_default:
+# Register utilities keybindings
+swaywm_keybindings_utilities:
   - keybinding:
     name: "Audio mute"
     key: XF86AudioMute

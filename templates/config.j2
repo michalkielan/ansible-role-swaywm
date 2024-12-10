@@ -228,8 +228,8 @@ bindsym $mod+r mode "resize"
 #
 # Utilities:
 #
-# Register default keybindings
-{% for keybinding in swaywm_keybindings_default %}
+# Register utilities keybindings
+{% for keybinding in swaywm_keybindings_utilities %}
     # {{ keybinding.name }}
     bindsym {{ '--locked' if keybinding.locked | default(false) else '' }} {{ keybinding.key }} exec {{ keybinding.exec }}
 {% endfor %}
