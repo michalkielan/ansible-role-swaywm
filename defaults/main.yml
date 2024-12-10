@@ -3,3 +3,18 @@
 swaywm_users:
   - username: "{{ ansible_user_id }}"
     home: "{{ ansible_env.HOME | default('/home/{{ ansible_user_id }}') }}"
+
+# Logo key. Use Mod1 for Alt.
+swaywm_logo_key: "Mod4"
+
+# Home row direction keys, like vim
+swaywm_dir_keys_left: "h"
+swaywm_dir_keys_down: "j"
+swaywm_dir_keys_up: "k"
+swaywm_dir_keys_right: "l"
+
+# Your preferred terminal emulator
+swaywm_term: "foot"
+
+# Your preferred application launcher
+swaywm_menu: "wmenu-run"
