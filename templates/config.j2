@@ -34,14 +34,56 @@ exec swayidle {{ swaywm_swayidle }}
 
 ### Input configuration
 #
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+{% for touchpad in swaywm_inputs_touchpad %}
+input {{ touchpad.name }} {
+  {% if touchpad.send_events is defined %}
+  send_events {{ touchpad.send_events }}
+  {% endif -%}
+  {% if touchpad.tap is defined %}
+  tap {{ touchpad.tap }}
+  {% endif -%}
+  {% if touchpad.tap_button_map is defined %}
+  tap_button_map {{ touchpad.tap_button_map }}
+  {% endif -%}
+  {% if touchpad.tap_drag is defined %}
+  tap_drag {{ touchpad.tap_drag }}
+  {% endif -%}
+  {% if touchpad.tap_drag_lock is defined %}
+  tap_drag_lock {{ touchpad.tap_drag_lock }}
+  {% endif -%}
+  {% if touchpad.accel_speed is defined %}
+  accel_speed {{ touchpad.accel_speed }}
+  {% endif -%}
+  {% if touchpad.accel_profile is defined %}
+  accel_profile {{ touchpad.accel_profile }}
+  {% endif -%}
+  {% if touchpad.natural_scroll is defined %}
+  natural_scroll {{ touchpad.natural_scroll }}
+  {% endif -%}
+  {% if touchpad.left_handed is defined %}
+  left_handed {{ touchpad.left_handed }}
+  {% endif -%}
+  {% if touchpad.click_method is defined %}
+  click_method {{ touchpad.click_method }}
+  {% endif -%}
+  {% if touchpad.clickfinger_button_map is defined %}
+  clickfinger_button_map {{ touchpad.clickfinger_button_map }}
+  {% endif -%}
+  {% if touchpad.middle_emulation is defined %}
+  middle_emulation {{ touchpad.middle_emulation }}
+  {% endif -%}
+  {% if touchpad.scroll_method is defined %}
+  scroll_method {{ touchpad.scroll_method }}
+  {% endif -%}
+  {% if touchpad.dwt is defined %}
+  dwt {{ touchpad.dwt }}
+  {% endif -%}
+  {% if touchpad.dwtp is defined %}
+  dwtp {{ touchpad.dwtp }}
+  {% endif -%}
+}
+{% endfor -%}
+
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.

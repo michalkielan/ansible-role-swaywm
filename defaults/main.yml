@@ -56,6 +56,16 @@ swaywm_outputs: []
 #     resume 'swaymsg "output * power on"' \
 #     before-sleep 'swaylock -f -c 000000'
 
+# Example configuration
+#
+swaywm_inputs_touchpad: []
+# swaywm_inputs_touchpad:
+#   - name: "2:14:SynPS/2_Synaptics_TouchPad"
+#     dwt: "enabled"
+#     tap: "enabled"
+#     natural_scroll: "enabled"
+#     middle_emulation: "enabled"
+
 # Register default keybindings
 swaywm_keybindings_default:
   - keybinding:
