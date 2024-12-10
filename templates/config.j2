@@ -258,4 +258,11 @@ bar {
 bindsym {{ '--locked' if keybinding.locked else '' }} {{ keybinding.key }} exec {{ keybinding.exec }}
 {% endfor %}
 
+# Autostart applications
+#
+{% for app in swaywm_autostart_apps %}
+# {{ app.name }}
+{{ 'exec_always' if app.always | default(false) else 'exec' }} {{ app.exec }}
+{% endfor %}
+
 include {{ swaywm_sysconfdir}}/sway/config.d/*

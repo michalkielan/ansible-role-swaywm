@@ -80,4 +80,9 @@ swaywm_bar:
     # binding_mode: <border> <background> <text>
 
 # Register extra keybindings
+#
 swaywm_keybindings_extra: []
+
+# Autostart applicatoins
+#
+swaywm_autostart_apps: []
