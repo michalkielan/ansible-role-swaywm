@@ -58,7 +58,6 @@ swaywm_keybindings_default:
   - keybinding:
     name: "Take a screenshot with grim"
     key: Print
-    locked: false
     exec: "grim"
 
 # Status bar

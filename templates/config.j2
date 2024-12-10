@@ -199,7 +199,7 @@ bindsym $mod+r mode "resize"
 # Register default keybindings
 {% for keybinding in swaywm_keybindings_default %}
     # {{ keybinding.name }}
-    bindsym {{ '--locked' if keybinding.locked else '' }} {{ keybinding.key }} exec {{ keybinding.exec }}
+    bindsym {{ '--locked' if keybinding.locked | default(false) else '' }} {{ keybinding.key }} exec {{ keybinding.exec }}
 {% endfor %}
 
 #
@@ -255,7 +255,7 @@ bar {
 # Register extra keybindings
 {% for keybinding in swaywm_keybindings_extra %}
 # {{ keybinding.name }}
-bindsym {{ '--locked' if keybinding.locked else '' }} {{ keybinding.key }} exec {{ keybinding.exec }}
+bindsym {{ '--locked' if keybinding.locked | default(false) else '' }} {{ keybinding.key }} exec {{ keybinding.exec }}
 {% endfor %}
 
 # Autostart applications
