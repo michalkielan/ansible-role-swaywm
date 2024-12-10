@@ -207,17 +207,49 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
+{% if swaywm_bar.position is defined %}
+    position {{ swaywm_bar.position }}
+{% endif %}
+{% if swaywm_bar.swaybar_command is defined %}
+    swaybar_command {{ swaywm_bar.swaybar_command }}
+{% endif %}
+{% if swaywm_bar.status_command is defined %}
+    status_command {{ swaywm_bar.status_command }}
+{% endif %}
+{% if swaywm_bar.colors is defined %}
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+  {% if swaywm_bar.colors.statusline is defined %}
+    statusline {{ swaywm_bar.colors.statusline }}
+  {% endif %}
+  {% if swaywm_bar.colors.background is defined %}
+    background {{ swaywm_bar.colors.background }}
+  {% endif %}
+  {% if swaywm_bar.colors.separator is defined %}
+    separator {{ swaywm_bar.colors.separator }}
+  {% endif %}
+  {% if swaywm_bar.colors.focused_background is defined %}
+    focused_background {{ swaywm_bar.colors.focused_background }}
+  {% endif %}
+  {% if swaywm_bar.colors.focused_statusline is defined %}
+    focused_statusline {{ swaywm_bar.colors.focused_statusline }}
+  {% endif %}
+  {% if swaywm_bar.colors.focused_workspace is defined %}
+    focused_workspace {{ swaywm_bar.colors.focused_workspace }}
+  {% endif %}
+  {% if swaywm_bar.colors.active_workspace is defined %}
+    active_workspace {{ swaywm_bar.colors.active_workspace }}
+  {% endif %}
+  {% if swaywm_bar.colors.inactive_workspace is defined %}
+    inactive_workspace {{ swaywm_bar.colors.inactive_workspace }}
+  {% endif %}
+  {% if swaywm_bar.colors.urgent_workspace is defined %}
+    urgent_workspace {{ swaywm_bar.colors.urgent_workspace }}
+  {% endif %}
+  {% if swaywm_bar.colors.binding_mode is defined %}
+    binding_mode {{ swaywm_bar.colors.binding_mode }}
+  {% endif %}
     }
+{% endif %}
 }
 
 include {{ swaywm_sysconfdir}}/sway/config.d/*
