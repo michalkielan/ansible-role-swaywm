@@ -1,2 +1,5 @@
 ---
 # tasks file for ansible-role-swaywm
+- name: Create sway config file
+  ansible.builtin.import_tasks:
+    file: "config.yml"

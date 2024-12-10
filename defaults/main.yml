@@ -1,2 +1,5 @@
 ---
 # defaults file for ansible-role-swaywm
+swaywm_users:
+  - username: "{{ ansible_user_id }}"
+    home: "{{ ansible_env.HOME | default('/home/{{ ansible_user_id }}') }}"
