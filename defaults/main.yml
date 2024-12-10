@@ -11,10 +11,11 @@ swaywm_sysconfdir: "/etc"
 swaywm_logo_key: "Mod4"
 
 # Home row direction keys, like vim
-swaywm_dir_keys_left: "h"
-swaywm_dir_keys_down: "j"
-swaywm_dir_keys_up: "k"
-swaywm_dir_keys_right: "l"
+swaywm_dir_keys:
+  left: "h"
+  down: "j"
+  up: "k"
+  right: "l"
 
 # Your preferred terminal emulator
 swaywm_term: "foot"
