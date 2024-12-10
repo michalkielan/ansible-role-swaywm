@@ -1,7 +1,7 @@
-Role Name
-=========
+ansible-role-swaywm
+===================
 
-A brief description of the role goes here.
+Ansible role to generate sway config.
 
 Requirements
 ------------
