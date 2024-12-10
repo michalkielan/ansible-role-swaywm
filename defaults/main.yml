@@ -21,3 +21,41 @@ swaywm_term: "foot"
 
 # Your preferred application launcher
 swaywm_menu: "wmenu-run"
+
+# Register default keybindings
+swaywm_keybindings_default:
+  - keybinding:
+    name: "Audio mute"
+    key: XF86AudioMute
+    locked: true
+    exec: "pactl set-sink-mute \\@DEFAULT_SINK@ toggle"
+  - keybinding:
+    name: "Audio lower volume"
+    key: XF86AudioLowerVolume
+    locked: true
+    exec: "pactl set-sink-volume \\@DEFAULT_SINK@ -5%"
+  - keybinding:
+    name: "Audio raise volume"
+    key: XF86AudioRaiseVolume
+    locked: true
+    exec: "pactl set-sink-volume \\@DEFAULT_SINK@ +5%"
+  - keybinding:
+    name: "Audio mic mute"
+    key: XF86AudioMicMute
+    locked: true
+    exec: "pactl set-source-mute \\@DEFAULT_SOURCE@ toggle"
+  - keybinding:
+    name: "Brightness down"
+    key: XF86MonBrightnessDown
+    locked: true
+    exec: "brightnessctl set 5%-"
+  - keybinding:
+    name: "Brightness up"
+    key: XF86MonBrightnessUp
+    locked: true
+    exec: "brightnessctl set 5%+"
+  - keybinding:
+    name: "Take a screenshot with grim"
+    key: Print
+    locked: false
+    exec: "grim"
