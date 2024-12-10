@@ -66,6 +66,29 @@ swaywm_inputs_touchpad: []
 #     natural_scroll: "enabled"
 #     middle_emulation: "enabled"
 
+# Register basics keybindings
+swaywm_keybindings_basics:
+  - keybinding:
+    name: "Start a terminal"
+    key: "$mod+Return"
+    exec: "exec $term"
+  - keybinding:
+    name: "Kill focused window"
+    key: "$mod+Shift+q"
+    exec: "kill"
+  - keybinding:
+    name: "Start your launcher"
+    key: "$mod+d"
+    exec: "exec $menu"
+  - keybinding:
+    name: "Reload the configuration file"
+    key: "$mod+Shift+c"
+    exec: "reload"
+  - keybinding:
+    name: "Exit sway (logs you out of your Wayland session)"
+    key: "$mod+Shift+e"
+    exec: "bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'"
+
 # Register utilities keybindings
 swaywm_keybindings_utilities:
   - keybinding:
