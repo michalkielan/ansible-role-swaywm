@@ -22,6 +22,12 @@ set $term {{ swaywm_term }}
 # Your preferred application launcher
 set $menu {{ swaywm_menu }}
 
+### Windows tweaks
+#
+{% if swaywm_default_border is defined %}
+default_border {{ swaywm_default_border.style }} {{ swaywm_default_border.size }}
+{% endif %}
+
 ### Output configuration
 #
 {% for output in swaywm_outputs_desktop_background %}

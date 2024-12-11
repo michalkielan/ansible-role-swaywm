@@ -26,6 +26,12 @@ swaywm_term: "foot"
 # Your preferred application launcher
 swaywm_menu: "wmenu-run"
 
+# Border style
+#
+# swaywm_default_border:
+#   style: "pixel"
+#   size: 0
+
 # Output configuration
 swaywm_outputs_desktop_background:
   - output:
