@@ -6,6 +6,10 @@ swaywm_users:
 
 swaywm_sysconfdir: "/etc"
 
+swaywm_font:
+  font: "monospace"
+  size: 10
+
 # Logo key. Use Mod1 for Alt.
 swaywm_logo_key: "Mod4"
 
