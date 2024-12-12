@@ -1,5 +1,9 @@
 ---
 - hosts: localhost
   remote_user: root
+  vars:
+    swaywm_users:
+      - username: "{{ ansible_user_id }}"
+        home: "{{ ansible_env.HOME | default('/home/{{ ansible_user_id }}') }}"
   roles:
-    - ansible-role-swaywm
+    - ../..
