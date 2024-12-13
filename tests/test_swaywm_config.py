@@ -6,7 +6,7 @@ import ansible_runner
 def test_minimal_examle():
     """Minimal working example"""
     result = ansible_runner.run(
-        private_data_dir=".",
+        private_data_dir="./tests",
         inventory=["localhost"],
         playbook="minimal_example.yml",
     )
