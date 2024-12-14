@@ -1,0 +1,136 @@
+---
+- hosts: localhost
+  remote_user: root
+  vars:
+    ansible_unit_test: True
+    swaywm_users:
+      - username: "{{ ansible_user_id }}"
+        home: "{{ ansible_env.HOME | default('/home/{{ ansible_user_id }}') }}"
+    swaywm_font:
+      font: "foo"
+      size: 42
+    swaywm_logo_key: "Mod1"
+    swaywm_dir_keys:
+      left: "h"
+      down: "j"
+      up: "k"
+      right: "l"
+    swaywm_term: "foot"
+    swaywm_menu: "wmenu-run"
+    swaywm_default_border:
+      style: "pixel"
+      size: 0
+    swaywm_outputs_desktop_background:
+      - output:
+        name: "screen_1920x1080"
+        file: "/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png"
+        mode: fill
+      - output:
+        name: "screen_2048x1536"
+        file: "/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png"
+        mode: fill
+    swaywm_outputs:
+      - output:
+        name: "HDMI-A-1"
+        resolution:
+          height: 1920
+          width: 1080
+        position:
+          x: 1920
+          y: 0
+      - output:
+        name: "HDMI-A-2"
+        resolution:
+          height: 1920
+          width: 1080
+        position:
+          x: 1920
+          y: 1920
+    swaywm_inputs_touchpad:
+      - name: "2:14:SynPS/2_Synaptics_TouchPad"
+        dwt: "enabled"
+        tap: "enabled"
+        natural_scroll: "enabled"
+        middle_emulation: "enabled"
+    swaywm_keybindings_basics:
+      - keybinding:
+        name: "Start a terminal"
+        key: "$mod+Return"
+        exec: "exec $term"
+      - keybinding:
+        name: "Kill focused window"
+        key: "$mod+Shift+q"
+        exec: "kill"
+      - keybinding:
+        name: "Start your launcher"
+        key: "$mod+d"
+        exec: "exec $menu"
+      - keybinding:
+        name: "Reload the configuration file"
+        key: "$mod+Shift+c"
+        exec: "reload"
+      - keybinding:
+        name: "Exit sway (logs you out of your Wayland session)"
+        key: "$mod+Shift+e"
+        exec: "bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'"
+    swaywm_keybindings_utilities:
+      - keybinding:
+        name: "Audio mute"
+        key: XF86AudioMute
+        locked: true
+        exec: "pactl set-sink-mute \\@DEFAULT_SINK@ toggle"
+      - keybinding:
+        name: "Audio lower volume"
+        key: XF86AudioLowerVolume
+        locked: true
+        exec: "pactl set-sink-volume \\@DEFAULT_SINK@ -5%"
+      - keybinding:
+        name: "Audio raise volume"
+        key: XF86AudioRaiseVolume
+        locked: true
+        exec: "pactl set-sink-volume \\@DEFAULT_SINK@ +5%"
+      - keybinding:
+        name: "Audio mic mute"
+        key: XF86AudioMicMute
+        locked: true
+        exec: "pactl set-source-mute \\@DEFAULT_SOURCE@ toggle"
+      - keybinding:
+        name: "Brightness down"
+        key: XF86MonBrightnessDown
+        locked: true
+        exec: "brightnessctl set 5%-"
+      - keybinding:
+        name: "Brightness up"
+        key: XF86MonBrightnessUp
+        locked: true
+        exec: "brightnessctl set 5%+"
+      - keybinding:
+        name: "Take a screenshot with grim"
+        key: Print
+        exec: "grim"
+    swaywm_keybindings_utilities:
+      - keybinding:
+        name: "Dummy 1"
+        key: "Shift+Alt+1"
+        locked: true
+        exec: "foo"
+      - keybinding:
+        name: "Dummy 2"
+        key: "Shift+Alt+2"
+        locked: true
+        exec: "dummy 2"
+    swaywm_autostart_apps:
+      - app:
+        name: "app1 always true"
+        exec_always: true
+        exec: "app1"
+      - app:
+        name: "app2 always false"
+        exec_always: false
+        exec: "app2"
+      - app:
+        name: "app3 always none"
+        exec: "app3"
+
+  roles:
+    - ../..
