@@ -10,7 +10,7 @@
       - output:
         name: "*"
         file: "foo.png"
-        mode: fill
+        mode: ""
 
   roles:
     - ../..
