@@ -41,7 +41,9 @@ def test_valid_config(playbook_file):
     validate_sway_config(config_file)
 
 
-@pytest.mark.parametrize("playbook_file", ["background_file_not_exists.yml"])
+@pytest.mark.parametrize(
+    "playbook_file", ["desktop_background_scaling_mode_not_defined.yml"]
+)
 def test_invalid_config(playbook_file):
     """Test invalid config"""
     result = ansible_runner.run(
