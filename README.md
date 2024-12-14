@@ -1,3 +1,5 @@
+[![tests](https://github.com/michalkielan/ansible-role-swaywm/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/michalkielan/ansible-role-swaywm/actions/workflows/tests.yml)
+
 ansible-role-swaywm
 ===================
 
