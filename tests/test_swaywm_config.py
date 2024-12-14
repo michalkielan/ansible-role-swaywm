@@ -13,12 +13,15 @@ class SwayConfigValidationError(Exception):
 def validate_sway_config(config_file):
     """Validate sway config file"""
     try:
-        subprocess.run(
+        output = subprocess.run(
             ["sway", "--config", config_file, "--validate", "--debug"],
             check=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
         )
+        print("stdout:", output.stdout.decode())
+        print("stderr:", output.stderr.decode())
+        print("return code:", output.returncode)
     except subprocess.CalledProcessError as exc:
         raise SwayConfigValidationError(
             f"Config file {config_file} is invalid: {exc.stderr.decode()}"
