@@ -1,5 +1,6 @@
 """ swaywm config tests"""
 
+import pytest
 import subprocess
 from pathlib import Path
 import ansible_runner
@@ -24,12 +25,13 @@ def validate_sway_config(config_file):
         ) from exc
 
 
-def test_minimal_examle():
+@pytest.mark.parametrize("playbook_file", ["minimal_example.yml"])
+def test_minimal_examle(playbook_file):
     """Minimal working example"""
     result = ansible_runner.run(
         private_data_dir="./tests",
         inventory=["localhost"],
-        playbook="minimal_example.yml",
+        playbook=playbook_file,
     )
     assert result.rc == 0, f"Playbook failed with {result.rc}."
     config_file = Path.home() / ".config" / "sway" / "config"
