@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  remote_user: root
+  vars:
+    ansible_unit_test: True
+    swaywm_users:
+      - username: "{{ ansible_user_id }}"
+        home: "{{ ansible_env.HOME | default('/home/{{ ansible_user_id }}') }}"
+    swaywm_outputs_desktop_background:
+      - output:
+        name: "*"
+        file: "foo.png"
+        mode: ""
+
+  roles:
+    - ../..
