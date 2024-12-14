@@ -25,7 +25,7 @@ def validate_sway_config(config_file):
         ) from exc
 
 
-@pytest.mark.parametrize("playbook_file", ["minimal_example.yml"])
+@pytest.mark.parametrize("playbook_file", ["minimal_example.yml", "full_example.yml"])
 def test_minimal_examle(playbook_file):
     """Minimal working example"""
     result = ansible_runner.run(
