@@ -88,12 +88,32 @@
         position:
           x: 1920
           y: 1920
-    swaywm_inputs_touchpad:
-      - name: "2:14:SynPS/2_Synaptics_TouchPad"
-        dwt: "enabled"
-        tap: "enabled"
-        natural_scroll: "enabled"
-        middle_emulation: "enabled"
+    swaywm_inputs:
+      - name: "type:touchpad"
+        options:
+          - name: "Disable when typing"
+            key: dwt
+            value: "enabled"
+          - name: "Enable tap"
+            key: tap
+            value: "enabled"
+          - name: "Enable tap"
+            key: tap
+            value: "enabled"
+          - name: "Natural scrolling"
+            key: natural_scroll
+            value: "enabled"
+          - name: "Middle emulation"
+            key: middle_emulation
+            value: "enabled"
+      - name: "type:keyboard"
+        options:
+          - name: "Layout list"
+            key: xkb_layout
+            value: "us"
+          - name: "Disable caps lock"
+            key: xkb_options
+            value: "ctrl:nocaps"
     swaywm_keybindings_basics:
       - keybinding:
         name: "Start a terminal"

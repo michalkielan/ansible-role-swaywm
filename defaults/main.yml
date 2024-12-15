@@ -116,15 +116,26 @@ swaywm_outputs: []
 #     resume 'swaymsg "output * power on"' \
 #     before-sleep 'swaylock -f -c 000000'
 
-# Example configuration
+# Inputs configuration
 #
-swaywm_inputs_touchpad: []
-# swaywm_inputs_touchpad:
-#   - name: "2:14:SynPS/2_Synaptics_TouchPad"
-#     dwt: "enabled"
-#     tap: "enabled"
-#     natural_scroll: "enabled"
-#     middle_emulation: "enabled"
+swaywm_inputs: []
+# swaywm_inputs:
+#   - name: "type:touchpad"
+#     options:
+#       - name: "Disable when typing"
+#         key: dwt
+#         value: "enabled"
+#       - name: "Enable tap"
+#         key: tap
+#         value: "enabled"
+#   - name: "type:keyboard"
+#     options:
+#       - name: "Layout list"
+#         key: xkb_layout
+#         value: "us"
+#       - name: "Disable caps lock"
+#         key: xkb_options
+#         value: "ctrl:nocaps"
 
 # Register basics keybindings
 swaywm_keybindings_basics:
