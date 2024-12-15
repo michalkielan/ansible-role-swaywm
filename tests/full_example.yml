@@ -17,6 +17,13 @@
       right: "l"
     swaywm_term: "foot"
     swaywm_menu: "wmenu-run"
+    swaywm_extra_variables:
+      - variable:
+        name: "var1"
+        value: "val1"
+      - variable:
+        name: "var2"
+        value: "val2"
     swaywm_default_border:
       style: "pixel"
       size: 0

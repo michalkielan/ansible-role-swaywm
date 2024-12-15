@@ -22,6 +22,11 @@ set $term {{ swaywm_term }}
 # Your preferred application launcher
 set $menu {{ swaywm_menu }}
 
+# Extra variables
+{% for variable in swaywm_extra_variables %}
+set ${{ variable.name }} {{ variable.value }}
+{% endfor %}
+
 ### Windows tweaks
 #
 {% if swaywm_default_border is defined %}

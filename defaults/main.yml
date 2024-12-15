@@ -26,6 +26,14 @@ swaywm_term: "foot"
 # Your preferred application launcher
 swaywm_menu: "wmenu-run"
 
+# Extra variables
+#
+swaywm_extra_variables: []
+# swaywm_extra_variables:
+#   - variable:
+#     name:
+#     value:
+
 # Border style
 #
 # swaywm_default_border:
