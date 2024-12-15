@@ -3,38 +3,47 @@
 ansible-role-swaywm
 ===================
 
-Ansible role to generate sway config.
+An Ansible role to generate and deploy a customized Sway configuration. This role supports a wide range of configuration options from the Sway manual, which are exposed as variables for easier customization and management of your Sway setup.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Sway: This role is designed for use with the Sway window manager. Ensure that Sway is installed on your system.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+See [defaults/main.yml](https://github.com/michalkielan/ansible-role-swaywm/blob/master/defaults/main.yml) and [tests/*.yml](https://github.com/michalkielan/ansible-role-swaywm/tree/master/tests) for the full set of default variables.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+The following example demonstrates a minimal playbook that deploys a default Sway configuration. The deployed config will be the same as the default one from `/etc/sway/config` unless overridden by specific variables.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yml
+----
+- name: Deploy Sway configuration
+  hosts: localhost
+  vars:
+    swaywm_users:
+      - username: "{{ ansible_user_id }}"
+        home: "{{ ansible_env.HOME | default('/home/{{ ansible_user_id }}') }}"
+
+  roles:
+    - ansible-role-swaywm
+```
 
 License
 -------
 
-BSD
+[BSD](https://github.com/michalkielan/ansible-role-swaywm/blob/master/LICENSE)
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Michal Kielan, michalkielan@protonmail.com
