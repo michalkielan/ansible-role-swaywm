@@ -1,12 +1,14 @@
+---
 galaxy_info:
   author: Michal Kielan
-  description: "An Ansible role to generate and deploy a customized Sway configuration."
+  description: |
+    "An Ansible role to generate and deploy a customized Sway configuration."
   license: license (BSD)
   min_ansible_version: 2.1
   platforms:
-  - name: Linux
-    versions:
-    - all
+    - name: Linux
+      versions:
+        - all
 
   galaxy_tags:
     - sway
