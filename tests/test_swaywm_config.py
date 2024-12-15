@@ -5,6 +5,8 @@ from pathlib import Path
 import pytest
 import ansible_runner
 
+PLAYBOOKS_PATH = "playbooks/"
+
 
 class SwayConfigValidationError(Exception):
     """Exception raised when sway config is invalid."""
@@ -34,7 +36,7 @@ def test_valid_config(playbook_file):
     result = ansible_runner.run(
         private_data_dir="./tests",
         inventory=["localhost"],
-        playbook=playbook_file,
+        playbook=str(PLAYBOOKS_PATH + playbook_file),
     )
     assert result.rc == 0, f"Playbook failed with {result.rc}."
     config_file = Path.home() / ".config" / "sway" / "config"
@@ -49,7 +51,7 @@ def test_invalid_config(playbook_file):
     result = ansible_runner.run(
         private_data_dir="./tests",
         inventory=["localhost"],
-        playbook=playbook_file,
+        playbook=str(PLAYBOOKS_PATH + playbook_file),
     )
     assert result.rc == 0, f"Playbook failed with {result.rc}."
     config_file = Path.home() / ".config" / "sway" / "config"

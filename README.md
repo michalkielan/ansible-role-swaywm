@@ -13,7 +13,7 @@ Sway: This role is designed for use with the Sway window manager. Ensure that Sw
 Role Variables
 --------------
 
-See [defaults/main.yml](https://github.com/michalkielan/ansible-role-swaywm/blob/master/defaults/main.yml) and [tests/*.yml](https://github.com/michalkielan/ansible-role-swaywm/tree/master/tests) for the full set of default variables.
+See [defaults/main.yml](https://github.com/michalkielan/ansible-role-swaywm/blob/master/defaults/main.yml) and [tests/playbooks](https://github.com/michalkielan/ansible-role-swaywm/tree/master/tests/playbooks) for the full set of default variables.
 
 Dependencies
 ------------
