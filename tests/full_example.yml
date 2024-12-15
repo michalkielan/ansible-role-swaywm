@@ -2,7 +2,7 @@
 - hosts: localhost
   remote_user: root
   vars:
-    ansible_unit_test: True
+    ansible_unit_test: true
     swaywm_users:
       - username: "{{ ansible_user_id }}"
         home: "{{ ansible_env.HOME | default('/home/{{ ansible_user_id }}') }}"
@@ -79,7 +79,9 @@
       - keybinding:
         name: "Exit sway (logs you out of your Wayland session)"
         key: "$mod+Shift+e"
-        exec: "bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'"
+        exec: "bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed \
+               the exit shortcut. Do you really want to exit sway? This will \
+               end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'"
     swaywm_keybindings_utilities:
       - keybinding:
         name: "Audio mute"
@@ -115,7 +117,7 @@
         name: "Take a screenshot with grim"
         key: Print
         exec: "grim"
-    swaywm_keybindings_utilities:
+    swaywm_keybindings_extra:
       - keybinding:
         name: "Dummy 1"
         key: "Shift+Alt+1"
