@@ -40,6 +40,47 @@ swaywm_extra_variables: []
 #   style: "pixel"
 #   size: 0
 
+# Colors of window borders and title bars
+#
+swaywm_client: []
+# swaywm_client:
+#   - name: focused
+#     border: <color>
+#     background: <color>
+#     text: <color>
+#     indicator: <color> # optional
+#     child_border: <color> # optional
+#   - name: focused_inactive
+#     border: <color>
+#     background: <color>
+#     text: <color>
+#     indicator: <color> # optional
+#     child_border: <color> # optional
+#   - name: focused_tab_title
+#     border: <color>
+#     background: <color>
+#     text: <color>
+#     indicator: <color> # optional
+#     child_border: <color> # optional
+#   - name: unfocused
+#     border: <color>
+#     background: <color>
+#     text: <color>
+#     indicator: <color> # optional
+#     child_border: <color> # optional
+#   - name: urgent
+#     border: <color>
+#     background: <color>
+#     text: <color>
+#     indicator: <color> # optional
+#     child_border: <color> # optional
+#   - name: placeholder
+#     border: <color>
+#     background: <color>
+#     text: <color>
+#     indicator: <color> # optional
+#     child_border: <color> # optional
+
 # Output configuration
 swaywm_outputs_desktop_background:
   - output:

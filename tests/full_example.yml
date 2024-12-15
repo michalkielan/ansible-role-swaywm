@@ -27,6 +27,41 @@
     swaywm_default_border:
       style: "pixel"
       size: 0
+    swaywm_client:
+      - name: focused
+        border: "#4c7899"
+        background: "#285577"
+        text: "#ffffff"
+        indicator: "#2e9ef4"
+        child_border: "#285577"
+      - name: focused_inactive
+        border: "#333333"
+        background: "#5f676a"
+        text: "#ffffff"
+        indicator: "#484e50"
+        child_border: "#5f676a"
+      - name: focused_tab_title
+        border: "#333333"
+        background: "#5f676a"
+        text: "#ffffff"
+      - name: unfocused
+        border: "#333333"
+        background: "#222222"
+        text: "#888888"
+        indicator: "#292d2e"
+        child_border: "#222222"
+      - name: urgent
+        border: "#2f343a"
+        background: "#900000"
+        text: "#ffffff"
+        indicator: "#900000"
+        child_border: "#900000"
+      - name: placeholder
+        border: "#000000"
+        background: "#0c0c0c"
+        text: "#ffffff"
+        indicator: "#000000"
+        child_border: "#0c0c0c"
     swaywm_outputs_desktop_background:
       - output:
         name: "screen_1920x1080"

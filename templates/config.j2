@@ -33,6 +33,10 @@ set ${{ variable.name }} {{ variable.value }}
 default_border {{ swaywm_default_border.style }} {{ swaywm_default_border.size }}
 {% endif %}
 
+{% for client in swaywm_client %}
+client.{{ client.name }} {{ client.border }} {{ client.background }} {{ client.text }} {{ client.indicator if client.indicator is defined else '' }} {{ client.child_border if client.child_border is defined else '' }}
+{% endfor %}
+
 ### Output configuration
 #
 {% for output in swaywm_outputs_desktop_background %}
