@@ -86,27 +86,13 @@ swaywm_client: []
 #     indicator: <color> # optional
 #     child_border: <color> # optional
 
-# Output configuration
-swaywm_outputs_desktop_background:
-  - output:
-    name: "*"
-    # Default wallpaper (more resolutions are available in
-    # /usr/share/backgrounds/sway/)
-    file: "/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png"
-    mode: fill
-
-swaywm_outputs: []
-# Example configuration
+# Output configurations
 #
-# swaywm_outputs:
-#   - output:
-#     name: "HDMI-A-1"
-#     resolution:
-#       height: 1920
-#       width: 1080
-#     position:
-#       x: 1920
-#       y: 0
+swaywm_outputs:
+  - name: "*"
+    options: "bg \
+      '/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png' \
+      fill"
 
 # Idle configuration
 #
