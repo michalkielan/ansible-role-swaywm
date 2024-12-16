@@ -40,6 +40,11 @@ swaywm_extra_variables: []
 #   style: "pixel"
 #   size: 0
 
+swaywm_for_window: []
+# swaywm_for_window:
+#   - class: "app_id='floating_shell'"
+#     criteria: "floating enable, border pixel 1, sticky enable"
+
 # Colors of window borders and title bars
 #
 swaywm_client: []
