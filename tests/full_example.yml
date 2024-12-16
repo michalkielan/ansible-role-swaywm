@@ -18,11 +18,9 @@
     swaywm_term: "foot"
     swaywm_menu: "wmenu-run"
     swaywm_extra_variables:
-      - variable:
-        name: "var1"
+      - name: "var1"
         value: "val1"
-      - variable:
-        name: "var2"
+      - name: "var2"
         value: "val2"
     swaywm_default_border:
       style: "pixel"
@@ -103,85 +101,68 @@
             key: xkb_options
             value: "ctrl:nocaps"
     swaywm_keybindings_basics:
-      - keybinding:
-        name: "Start a terminal"
+      - name: "Start a terminal"
         key: "$mod+Return"
         exec: "exec $term"
-      - keybinding:
-        name: "Kill focused window"
+      - name: "Kill focused window"
         key: "$mod+Shift+q"
         exec: "kill"
-      - keybinding:
-        name: "Start your launcher"
+      - name: "Start your launcher"
         key: "$mod+d"
         exec: "exec $menu"
-      - keybinding:
-        name: "Reload the configuration file"
+      - name: "Reload the configuration file"
         key: "$mod+Shift+c"
         exec: "reload"
-      - keybinding:
-        name: "Exit sway (logs you out of your Wayland session)"
+      - name: "Exit sway (logs you out of your Wayland session)"
         key: "$mod+Shift+e"
         exec: "bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed \
                the exit shortcut. Do you really want to exit sway? This will \
                end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'"
     swaywm_keybindings_utilities:
-      - keybinding:
-        name: "Audio mute"
+      - name: "Audio mute"
         key: XF86AudioMute
         locked: true
         exec: "pactl set-sink-mute \\@DEFAULT_SINK@ toggle"
-      - keybinding:
-        name: "Audio lower volume"
+      - name: "Audio lower volume"
         key: XF86AudioLowerVolume
         locked: true
         exec: "pactl set-sink-volume \\@DEFAULT_SINK@ -5%"
-      - keybinding:
-        name: "Audio raise volume"
+      - name: "Audio raise volume"
         key: XF86AudioRaiseVolume
         locked: true
         exec: "pactl set-sink-volume \\@DEFAULT_SINK@ +5%"
-      - keybinding:
-        name: "Audio mic mute"
+      - name: "Audio mic mute"
         key: XF86AudioMicMute
         locked: true
         exec: "pactl set-source-mute \\@DEFAULT_SOURCE@ toggle"
-      - keybinding:
-        name: "Brightness down"
+      - name: "Brightness down"
         key: XF86MonBrightnessDown
         locked: true
         exec: "brightnessctl set 5%-"
-      - keybinding:
-        name: "Brightness up"
+      - name: "Brightness up"
         key: XF86MonBrightnessUp
         locked: true
         exec: "brightnessctl set 5%+"
-      - keybinding:
-        name: "Take a screenshot with grim"
+      - name: "Take a screenshot with grim"
         key: Print
         exec: "grim"
     swaywm_keybindings_extra:
-      - keybinding:
-        name: "Dummy 1"
+      - name: "Dummy 1"
         key: "Shift+Alt+1"
         locked: true
         exec: "foo"
-      - keybinding:
-        name: "Dummy 2"
+      - name: "Dummy 2"
         key: "Shift+Alt+2"
         locked: true
         exec: "dummy 2"
     swaywm_autostart_apps:
-      - app:
-        name: "app1 always true"
+      - name: "app1 always true"
         exec_always: true
         exec: "app1"
-      - app:
-        name: "app2 always false"
+      - name: "app2 always false"
         exec_always: false
         exec: "app2"
-      - app:
-        name: "app3 always none"
+      - name: "app3 always none"
         exec: "app3"
 
   roles:
