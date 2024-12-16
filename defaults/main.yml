@@ -30,8 +30,7 @@ swaywm_menu: "wmenu-run"
 #
 swaywm_extra_variables: []
 # swaywm_extra_variables:
-#   - variable:
-#     name:
+#   - name:
 #     value:
 
 # Border style
@@ -130,24 +129,19 @@ swaywm_inputs: []
 
 # Register basics keybindings
 swaywm_keybindings_basics:
-  - keybinding:
-    name: "Start a terminal"
+  - name: "Start a terminal"
     key: "$mod+Return"
     exec: "exec $term"
-  - keybinding:
-    name: "Kill focused window"
+  - name: "Kill focused window"
     key: "$mod+Shift+q"
     exec: "kill"
-  - keybinding:
-    name: "Start your launcher"
+  - name: "Start your launcher"
     key: "$mod+d"
     exec: "exec $menu"
-  - keybinding:
-    name: "Reload the configuration file"
+  - name: "Reload the configuration file"
     key: "$mod+Shift+c"
     exec: "reload"
-  - keybinding:
-    name: "Exit sway (logs you out of your Wayland session)"
+  - name: "Exit sway (logs you out of your Wayland session)"
     key: "$mod+Shift+e"
     exec: "bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the \
            exit shortcut. Do you really want to exit sway? This will end \
@@ -155,38 +149,31 @@ swaywm_keybindings_basics:
 
 # Register utilities keybindings
 swaywm_keybindings_utilities:
-  - keybinding:
-    name: "Audio mute"
+  - name: "Audio mute"
     key: XF86AudioMute
     locked: true
     exec: "pactl set-sink-mute \\@DEFAULT_SINK@ toggle"
-  - keybinding:
-    name: "Audio lower volume"
+  - name: "Audio lower volume"
     key: XF86AudioLowerVolume
     locked: true
     exec: "pactl set-sink-volume \\@DEFAULT_SINK@ -5%"
-  - keybinding:
-    name: "Audio raise volume"
+  - name: "Audio raise volume"
     key: XF86AudioRaiseVolume
     locked: true
     exec: "pactl set-sink-volume \\@DEFAULT_SINK@ +5%"
-  - keybinding:
-    name: "Audio mic mute"
+  - name: "Audio mic mute"
     key: XF86AudioMicMute
     locked: true
     exec: "pactl set-source-mute \\@DEFAULT_SOURCE@ toggle"
-  - keybinding:
-    name: "Brightness down"
+  - name: "Brightness down"
     key: XF86MonBrightnessDown
     locked: true
     exec: "brightnessctl set 5%-"
-  - keybinding:
-    name: "Brightness up"
+  - name: "Brightness up"
     key: XF86MonBrightnessUp
     locked: true
     exec: "brightnessctl set 5%+"
-  - keybinding:
-    name: "Take a screenshot with grim"
+  - name: "Take a screenshot with grim"
     key: Print
     exec: "grim"
 
@@ -211,7 +198,15 @@ swaywm_bar:
 # Register extra keybindings
 #
 swaywm_keybindings_extra: []
+# swaywm_keybindings_extra:
+#   - name: "<key binding name>"
+#     key: <short key>
+#     exec: <executable>
 
 # Autostart applicatoins
 #
 swaywm_autostart_apps: []
+# swaywm_autostart_apps:
+#   - name: <app name>
+#     exec_always: true # optional, default false
+#     exec: <exe path>
