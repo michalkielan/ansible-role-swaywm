@@ -43,12 +43,8 @@ client.{{ client.name }} {{ client.border }} {{ client.background }} {{ client.t
 
 ### Output configuration
 #
-{% for output in swaywm_outputs_desktop_background %}
-output {{ output.name }} bg {{ output.file }} {{ output.mode }}
-{% endfor %}
-
 {% for output in swaywm_outputs %}
-output {{ output.name }} resolution {{ output.resolution.height }}x{{ output.resolution.width }} position {{ output.position.x }},{{ output.position.y }}
+output {{ output.name }} {{ output.options }}
 {% endfor %}
 
 {% if swaywm_swayidle is defined %}
