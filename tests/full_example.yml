@@ -27,6 +27,11 @@
     swaywm_default_border:
       style: "pixel"
       size: 0
+    swaywm_for_window:
+      - class: "app_id='floating_shell'"
+        criteria: "floating enable, border pixel 1, sticky enable"
+      - class: "app_id='mpv'"
+        criteria: "inhibit_idle fullscreen"
     swaywm_client:
       - name: focused
         border: "#4c7899"
