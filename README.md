@@ -215,8 +215,3 @@ License
 -------
 
 [BSD](https://github.com/michalkielan/ansible-role-swaywm/blob/master/LICENSE)
-
-Author Information
-------------------
-
-Michal Kielan, michalkielan@protonmail.com
