@@ -7,7 +7,7 @@
     mode: '0750'
     owner: "{{ user.username }}"
     group: "{{ user.username }}"
-  loop: "{{ swaywm_users|flatten(levels=1) }}"
+  loop: "{{ swaywm_users | flatten(levels=1) }}"
   loop_control:
     loop_var: user
 
@@ -20,6 +20,6 @@
     owner: "{{ user.username }}"
     group: "{{ user.username }}"
     backup: true
-  loop: "{{ swaywm_users|flatten(levels=1) }}"
+  loop: "{{ swaywm_users | flatten(levels=1) }}"
   loop_control:
     loop_var: user
