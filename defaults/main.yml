@@ -1,4 +1,6 @@
 ---
+role_version: "dev"
+
 # defaults file for ansible-role-swaywm
 swaywm_users:
   - username: "{{ ansible_user_id }}"
