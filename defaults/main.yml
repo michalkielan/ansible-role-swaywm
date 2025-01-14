@@ -1,5 +1,5 @@
 ---
-role_version: "0.1.0"
+role_version: "0.1.0dev"
 
 # defaults file for ansible-role-swaywm
 swaywm_users:
